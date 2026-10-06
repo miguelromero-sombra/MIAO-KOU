@@ -1,0 +1,138 @@
+/* =========================================
+   LAYOUT — Estructura, grids y responsive
+   ========================================= */
+
+/* -----------------------------------------
+   Encabezado de sección / catálogo
+   ----------------------------------------- */
+
+.container-article {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 30px auto 15px auto;
+  padding: 0 20px;
+}
+
+.container-article h4 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #070707;
+  margin: 0;
+}
+
+.container-article p {
+  color: #d4af37;
+  cursor: pointer;
+  font-weight: 600;
+  margin: 0;
+  transition: opacity 0.3s ease;
+}
+
+.container-article p:hover {
+  opacity: 0.8;
+}
+
+/* -----------------------------------------
+   Grid de servicios / productos
+   ----------------------------------------- */
+
+.main__services {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 2 Columnas de igual tamaño */
+    grid-template-rows: repeat(2, auto);    /* 2 Filas automáticas según contenido */
+    gap: 20px;                             /* Espacio entre tarjetas */
+    margin-bottom: 30px;
+}
+
+
+
+
+/* -----------------------------------------
+   Grid del footer
+   ----------------------------------------- */
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
+  gap: 30px;
+  padding-bottom: 40px;
+  text-align: left;
+}
+
+/* -----------------------------------------
+   Responsive
+   ----------------------------------------- */
+
+/* Tablets / laptops pequeñas */
+@media (max-width: 1150px) {
+  .main__services {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+  }
+}
+
+/* Dispositivos medianos */
+@media (max-width: 1000px) {
+  .ancho {
+    height: auto;
+  }
+
+  .container-fluid-derecha {
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .sale-content h2,
+  .sale-container h2 {
+    font-size: 1.8rem;
+  }
+
+  .sale-discount {
+    font-size: 1.3rem;
+  }
+
+  .sale-discount span {
+    font-size: 1.8rem;
+  }
+}
+
+/* Dispositivos móviles */
+@media (max-width: 576px) {
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .bottom-flex {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .newsletter-form {
+    flex-direction: column;
+  }
+
+  .newsletter-form button {
+    width: 100%;
+  }
+
+  .container-article {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .main__services {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(8, auto);
+    align-items: center;
+    justify-items: center;
+  }
+}
